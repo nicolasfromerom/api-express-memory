@@ -53,9 +53,6 @@ class ProductsService{
     if (index === -1) {
       throw boom.notFound('Product not found');
     }
-    if (product.isBlock) {
-      throw boom.conflict('Product not available');
-    }
     const product = this.products[index];
     this.products[index] = {
       ...product,
