@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/:categoryId/products/:productId', (request, response) => {
-  const { categoryId, productId } = request.params;
-  response.json({
+router.get('/:categoryId/products/:productId', (req, res) => {
+  const { categoryId, productId } = req.params;
+  res.json({
     categoryId,
     productId
   })

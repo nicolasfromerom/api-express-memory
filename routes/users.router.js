@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-router.get('/', (request, response) => {
-  const { limit, offset } = request.query;
+router.get('/', (req, res) => {
+  const { limit, offset } = req.query;
   if (limit && offset) {
-    response.json({
+    res.json({
       limit,
       offset,
     });
   } else {
-    response.send('no hay parametros');
+    res.send('no hay parametros');
   }
 });
 
